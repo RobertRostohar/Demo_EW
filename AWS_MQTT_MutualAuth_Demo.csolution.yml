@@ -35,4 +35,4 @@ solution:
       device: ARM::SSE-300-MPS3
 
   projects:
-    - project: ./Demo.cproject.yml
+    - project: ./AWS_MQTT_MutualAuth_Demo/Demo.cproject.yml

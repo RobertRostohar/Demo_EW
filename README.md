@@ -28,7 +28,7 @@ Demo is available for the following targets:
    - runs on IMXRT1050-EVKB board and uses WiFi interface with WizFi360 WiFi module (alternative B)
  - `AVH`: runs on Arm Virtual Hardware Targets (MPS3 platform for Corstone-300)
 
-Required CMSIS packs are listed in the [Demo.csolution.yml](AWS_MQTT_MutualAuth_Demo/Demo.csolution.yml) file.
+Required CMSIS packs are listed in the [AWS_MQTT_MutualAuth_Demo.csolution.yml](AWS_MQTT_MutualAuth_Demo.csolution.yml) file.
 
 ### Target: `IP-Stack`
 
@@ -36,11 +36,12 @@ Board: IMXRT1050-EVKB
 Connectivity: FreeRTOS+TCP with Ethernet
 
 1. Use `csolution` to create `.cprj` project files  
-`csolution convert -s Demo.csolution.yml -c Demo.Debug+IP-Stack`  
-`csolution convert -s Demo.csolution.yml -c Demo.Release+IP-Stack`
+`csolution convert -s AWS_MQTT_MutualAuth_Demo.csolution.yml -c Demo.Debug+IP-Stack`  
+`csolution convert -s AWS_MQTT_MutualAuth_Demo.csolution.yml -c Demo.Release+IP-Stack`
 
 2. Build a specific project
   - use `cbuild`  
+  `cd AWS_MQTT_MutualAuth_Demo`  
   `cbuild Demo.Debug+IP-Stack.cprj`  
   `cbuild Demo.Release+IP-Stack.cprj`  
   - or use MDK and import `Demo.<build-type>+IP-Stack.cprj` and build with MDK  
@@ -62,11 +63,12 @@ Board: B-U585I-IOT02A
 Connectivity: WiFi interface with WiFi module
 
 1. Use `csolution` to create `.cprj` project files  
-`csolution convert -s Demo.csolution.yml -c Demo.Debug+WiFi`  
-`csolution convert -s Demo.csolution.yml -c Demo.Release+WiFi`
+`csolution convert -s AWS_MQTT_MutualAuth_Demo.csolution.yml -c Demo.Debug+WiFi`  
+`csolution convert -s AWS_MQTT_MutualAuth_Demo.csolution.yml -c Demo.Release+WiFi`
 
 2. Build a specific project
   - use `cbuild`  
+  `cd AWS_MQTT_MutualAuth_Demo`  
   `cbuild Demo.Debug+WiFi.cprj`  
   `cbuild Demo.Release+WiFi.cprj`  
   - or use MDK and import `Demo.<build-type>+WiFi.cprj` and build with MDK  
@@ -82,7 +84,7 @@ Connectivity: WiFi interface with WiFi module
   - reset the target and observe messages in the terminal
 
 Demo can run also on IMXRT1050-EVKB bard with external WiFi module (ESP8266 or WizFi360). Modify the following project files:
- - [Demo.csolution.yml](AWS_MQTT_MutualAuth_Demo/Demo.csolution.yml):
+ - [AWS_MQTT_MutualAuth_Demo.csolution.yml](AWS_MQTT_MutualAuth_Demo.csolution.yml):
    - change the target type `WiFi` to use `device: MIMXRT1052DVL6B`
  - [Demo.cproject.yml](AWS_MQTT_MutualAuth_Demo/Demo.cproject.yml):
    - include IMXRT1050-EVKB Board layer for `WiFi` target
@@ -98,11 +100,12 @@ Arm Virtual Hardware: MPS3 platform for Corstone-300
 Connectivity: Socket interface with VSocket
 
 1. Use `csolution` to create `.cprj` project files  
-`csolution convert -s Demo.csolution.yml -c Demo.Debug+AVH`  
-`csolution convert -s Demo.csolution.yml -c Demo.Release+AVH`
+`csolution convert -s AWS_MQTT_MutualAuth_Demo.csolution.yml -c Demo.Debug+AVH`  
+`csolution convert -s AWS_MQTT_MutualAuth_Demo.csolution.yml -c Demo.Release+AVH`
 
 2. Build a specific project
   - use `cbuild`  
+  `cd AWS_MQTT_MutualAuth_Demo`  
   `cbuild Demo.Debug+AVH.cprj`  
   `cbuild Demo.Release+AVH.cprj`  
   - or use MDK and import `Demo.<build-type>+AVH.cprj` and build with MDK  
@@ -116,9 +119,3 @@ Connectivity: Socket interface with VSocket
       - Command: $KARM\VHT\VHT_MPS3_Corstone_SSE-300.exe
   - when running standalone (via command line) and VHT executable in path):  
     `VHT_MPS3_Corstone_SSE-300 -C mps3_board.visualisation.disable-visualisation=1 -C mps3_board.telnetterminal0.start_telnet=0 -C mps3_board.uart0.out_file=- -a <image>`
-
-  
-    
-    
-
-
