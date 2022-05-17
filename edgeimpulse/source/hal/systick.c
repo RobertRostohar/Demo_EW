@@ -26,7 +26,7 @@ static uint64_t cpu_cycle_count = 0;
  */
 int Init_SysTick(void)
 {
-    const uint32_t ticks_10ms = GetSystemCoreClock()/100 + 1;
+    const uint32_t ticks_10ms = SystemCoreClock/100 + 1;
     int err = 0;
 
     /* Reset CPU cycle count value. */

@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 #include "uart_stdout.h"
-#include "Driver_PINMUX_AND_PINPAD.h"
 #include "Driver_USART.h"
 
 #include <stdio.h>
@@ -34,7 +33,7 @@
 
 //   <o>Connect to hardware via Driver_USART# <0-255>
 //   <i>Select driver control block for USART interface
-#define USART_DRV_NUM           2
+#define USART_DRV_NUM           0
 
 //   <o>Baudrate
 #define USART_BAUDRATE          115200
@@ -48,84 +47,6 @@
 extern ARM_DRIVER_USART  USART_Driver_(USART_DRV_NUM);
 #define ptrUSART       (&USART_Driver_(USART_DRV_NUM))
 
-/**
-  Initialize pinmux
-
-  \return          0 on success, or -1 on error.
-*/
-static int usart_pinmux_init(void)
-{
-	int32_t ret;
-	uint32_t port_config = PAD_FUNCTION_READ_ENABLE				|
-						   PAD_FUNCTION_DRIVER_DISABLE_STATE_WITH_PULL_UP;
-
-#if USART_DRV_NUM == 1	/* Rev A0 - DevKit Alpha */
-	/* PINMUX UART1_A */
-	/* Configure GPIO Pin : P1_4 as UART1_RX_A */
-	ret = PINMUX_Config (PORT_NUMBER_1, PIN_NUMBER_4, PINMUX_ALTERNATE_FUNCTION_1);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-	ret = PINPAD_Config(PORT_NUMBER_1, PIN_NUMBER_4, port_config);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-
-	/* Configure GPIO Pin : P1_5 as UART1_TX_A */
-	ret = PINMUX_Config (PORT_NUMBER_1, PIN_NUMBER_5, PINMUX_ALTERNATE_FUNCTION_1);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-	ret = PINPAD_Config(PORT_NUMBER_1, PIN_NUMBER_5, port_config);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-#elif USART_DRV_NUM == 2	/* Rev A1 - DevKit Beta */
-	/* PINMUX UART2_B */
-	/* Configure GPIO Pin : P3_16 as UART2_RX_B */
-	ret = PINMUX_Config (PORT_NUMBER_3, PIN_NUMBER_16, PINMUX_ALTERNATE_FUNCTION_2);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-	ret = PINPAD_Config(PORT_NUMBER_3, PIN_NUMBER_16, port_config);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-
-	/* Configure GPIO Pin : P3_17 as UART2_TX_B */
-	ret = PINMUX_Config (PORT_NUMBER_3, PIN_NUMBER_17, PINMUX_ALTERNATE_FUNCTION_2);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-	ret = PINPAD_Config(PORT_NUMBER_3, PIN_NUMBER_17, port_config);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-#elif USART_DRV_NUM == 4	/* Rev A1 - DevKit Beta */
-	/* PINMUX UART4_B */
-	/* Configure GPIO Pin : P3_1 as UART4_RX_B */
-	ret = PINMUX_Config (PORT_NUMBER_3, PIN_NUMBER_1, PINMUX_ALTERNATE_FUNCTION_1);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-	ret = PINPAD_Config(PORT_NUMBER_3, PIN_NUMBER_1, port_config);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-
-	/* Configure GPIO Pin : P3_2 as UART4_TX_B */
-	ret = PINMUX_Config (PORT_NUMBER_3, PIN_NUMBER_2, PINMUX_ALTERNATE_FUNCTION_1);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-	ret = PINPAD_Config(PORT_NUMBER_3, PIN_NUMBER_2, port_config);
-	if(ret != ARM_DRIVER_OK) {
-		return ret;
-	}
-#endif
-
-	return ret;
-}
 
 void usart_callback(uint32_t event)
 {
@@ -148,8 +69,6 @@ void usart_callback(uint32_t event)
 void UartStdOutInit(void)
 {
   int32_t status;
-
-  status = usart_pinmux_init();
 
   status = ptrUSART->Initialize(usart_callback);
 
@@ -250,7 +169,7 @@ bool GetLine (char *lp, unsigned int len)
 
 __attribute__((noreturn)) void UartEndSimulation(int code)
 {
-//    UartPutc((char) 0x4);  // End of simulation
-//    UartPutc((char) code); // Exit code
+    UartPutc((char) 0x4);  // End of simulation
+    UartPutc((char) code); // Exit code
     while(1);
 }
