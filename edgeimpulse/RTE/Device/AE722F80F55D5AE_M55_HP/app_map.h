@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------------------------
- * Copyright (c) 2021 Alif Semiconductor Inc.
+ * Copyright (c) 2022 Alif Semiconductor Inc.
  *
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from
@@ -17,21 +17,20 @@
  *
  * 3. This notice may not be removed or altered from any source distribution.
  *
- * $Date:        30. June 2021
+ * $Date:        02. feb 2022
  * $Revision:    V1.0.0
- * Author:       Girish BN
- * Project:      System clock defination for SOC
+ * Author:       Eugene Bonev
+ * Project:      MRAM XIP Configurations
  * -------------------------------------------------------------------------- */
 
-#ifndef CLK_H_
-#define CLK_H_
+#ifndef APP_MAP_H
+#define APP_MAP_H
 
-#ifndef AHB_CLOCK
-#define AHB_CLOCK 200000000
+#define _APP_ADDRESS			 MRAM_BASE
+
+/* TODO: The macros below must be fixed for the E-series devices */
+#define _PARTITION_ADDRESS		  0x8057F000
+#define _PARTITION_SIZE			  0x1000
+#define _APP_MAX_SIZE			  0x57F000
+
 #endif
-
-#ifndef APB_CLOCK
-#define APB_CLOCK 100000000
-#endif
-
-#endif /* CLK_H_ */

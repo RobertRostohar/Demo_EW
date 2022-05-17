@@ -7,23 +7,23 @@
 
   <Targets>
     <Target>
-      <TargetName>ARMCM55</TargetName>
+      <TargetName>Alif E7 M55_HP</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>6180000::V6.18::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>ARMCM55</Device>
-          <Vendor>ARM</Vendor>
-          <PackID>ARM.CMSIS.5.8.0</PackID>
-          <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IRAM(0x30000000,0x00020000) IRAM2(0x20000000,0x00020000) IROM(0x10000000,0x00200000) IROM2(0x00000000,0x00200000) CPUTYPE("Cortex-M55") FPU3(DFPU) DSP TZ MVE(FP) CLOCK(12000000) ESEL ELITTLE</Cpu>
+          <Device>AE722F80F55D5AE:M55_HP</Device>
+          <Vendor>Alif Semiconductor</Vendor>
+          <PackID>AlifSemiconductor.Ensemble.0.2.0</PackID>
+          <PackURL>https://www.alifsemi.com/</PackURL>
+          <Cpu>IRAM(0x02000000,0x00400000) IRAM2(0x08000000,0x00280000) IROM(0x80000000,0x00580000) XRAM(0x50000000,0x00040000) XRAM2(0x50800000,0x00100000) XRAM3(0x60000000,0x00040000) CPUTYPE("Cortex-M55") FPU3(DFPU) DSP TZ MVE(FP) CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2V8M(-S0 -C0 -P0 -FD30000000 -FC1000)</FlashDriverDll>
+          <FlashDriverDll>UL2V8M(-S0 -C0 -P0 -FD00000000 -FC20000 -FN1 -FF0Ensemble -FS080000000 -FL0580000 -FP0($$Device:AE722F80F55D5AE$Flash\algorithms\Ensemble.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:ARMCM55$Device\ARM\ARMCM55\Include\ARMCM55.h</RegisterFile>
+          <RegisterFile>$$Device:AE722F80F55D5AE$Device\M55_HP\Include\M55_HP.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile></SFDFile>
+          <SFDFile>$$Device:AE722F80F55D5AE$</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -181,14 +181,14 @@
             <uocRam>0</uocRam>
             <hadIROM>1</hadIROM>
             <hadIRAM>1</hadIRAM>
-            <hadXRAM>0</hadXRAM>
+            <hadXRAM>1</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>3</RvdsVP>
             <RvdsMve>2</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
             <nBranchProt>0</nBranchProt>
             <hadIRAM2>1</hadIRAM2>
-            <hadIROM2>1</hadIROM2>
+            <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
             <useUlib>0</useUlib>
             <EndSel>1</EndSel>
@@ -212,7 +212,7 @@
             <Ra2Chk>0</Ra2Chk>
             <Ra3Chk>0</Ra3Chk>
             <Im1Chk>1</Im1Chk>
-            <Im2Chk>0</Im2Chk>
+            <Im2Chk>1</Im2Chk>
             <OnChipMemories>
               <Ocm1>
                 <Type>0</Type>
@@ -246,18 +246,18 @@
               </Ocm6>
               <IRAM>
                 <Type>0</Type>
-                <StartAddress>0x30000000</StartAddress>
-                <Size>0x20000</Size>
+                <StartAddress>0x2000000</StartAddress>
+                <Size>0x400000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
-                <StartAddress>0x10000000</StartAddress>
-                <Size>0x200000</Size>
+                <StartAddress>0x80000000</StartAddress>
+                <Size>0x580000</Size>
               </IROM>
               <XRAM>
-                <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <Type>1</Type>
+                <StartAddress>0x50000000</StartAddress>
+                <Size>0x40000</Size>
               </XRAM>
               <OCR_RVCT1>
                 <Type>1</Type>
@@ -276,38 +276,38 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x10000000</StartAddress>
-                <Size>0x200000</Size>
+                <StartAddress>0x80000000</StartAddress>
+                <Size>0x580000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x200000</Size>
+                <Size>0x0</Size>
               </OCR_RVCT5>
               <OCR_RVCT6>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x50000000</StartAddress>
+                <Size>0x40000</Size>
               </OCR_RVCT6>
               <OCR_RVCT7>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x50800000</StartAddress>
+                <Size>0x100000</Size>
               </OCR_RVCT7>
               <OCR_RVCT8>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x60000000</StartAddress>
+                <Size>0x40000</Size>
               </OCR_RVCT8>
               <OCR_RVCT9>
                 <Type>0</Type>
-                <StartAddress>0x30000000</StartAddress>
-                <Size>0x20000</Size>
+                <StartAddress>0x2000000</StartAddress>
+                <Size>0x400000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
-                <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <StartAddress>0x8000000</StartAddress>
+                <Size>0x280000</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -338,9 +338,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>EI_CONFIG_ALIF_HP EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC CPU_CORTEX_M55</Define>
+              <Define>EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
               <Undefine></Undefine>
-              <IncludePath>.\source;.\build\generated\bsp</IncludePath>
+              <IncludePath>.\source</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -376,7 +376,7 @@
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
             <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings></DisabledWarnings>
+            <DisabledWarnings>6439</DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>
@@ -435,29 +435,14 @@
           <GroupName>hal</GroupName>
           <Files>
             <File>
-              <FileName>cmsis.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\source\hal\cmsis.c</FilePath>
-            </File>
-            <File>
-              <FileName>Driver_PINMUX_AND_PINPAD.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\source\hal\Driver_PINMUX_AND_PINPAD.c</FilePath>
-            </File>
-            <File>
-              <FileName>Driver_USART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\source\hal\Driver_USART.c</FilePath>
-            </File>
-            <File>
               <FileName>hal.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\source\hal\hal.c</FilePath>
             </File>
             <File>
-              <FileName>irqs.c</FileName>
+              <FileName>systick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\source\hal\irqs.c</FilePath>
+              <FilePath>.\source\hal\systick.c</FilePath>
             </File>
             <File>
               <FileName>retarget.c</FileName>
@@ -475,10 +460,16 @@
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
+          <GroupName>::CMSIS Driver</GroupName>
+        </Group>
+        <Group>
           <GroupName>::Data Exchange</GroupName>
         </Group>
         <Group>
           <GroupName>::Data Processing</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
         <Group>
           <GroupName>::Machine Learning</GroupName>
@@ -494,104 +485,228 @@
       </filter>
       <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0">
         <targetInfos>
-          <targetInfo name="ARMCM55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
       <package name="ethos-u-core-driver" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="ARM" version="0.4.0">
         <targetInfos>
-          <targetInfo name="ARMCM55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0">
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
       <package name="flatbuffers" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
         <targetInfos>
-          <targetInfo name="ARMCM55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
       <package name="gemmlowp" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
         <targetInfos>
-          <targetInfo name="ARMCM55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
       <package name="kissfft" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
         <targetInfos>
-          <targetInfo name="ARMCM55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
       <package name="ruy" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
         <targetInfos>
-          <targetInfo name="ARMCM55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
       <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
         <targetInfos>
-          <targetInfo name="ARMCM55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
     </packages>
-    <apis/>
+    <apis>
+      <api Capiversion="2.4.0" Cclass="CMSIS Driver" Cgroup="USART" exclusive="0">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </api>
+    </apis>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.5.0" condition="ARMv6_7_8-M Device">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="CMSIS" Cgroup="DSP" Cvariant="Source" Cvendor="ARM" Cversion="1.9.0-dev" condition="CMSIS DSP">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="CMSIS" Cgroup="NN Lib" Cvendor="ARM" Cversion="3.0.0" condition="CMSIS NN">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Machine Learning" Cgroup="NPU Support" Csub="Ethos-U Driver" Cvariant="U55" Cvendor="ARM" Cversion="1.0.5">
+        <package name="ethos-u-core-driver" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="ARM" version="0.4.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.4" Cclass="CMSIS Driver" Cgroup="USART" Csub="USART" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="Ensemble CMSIS_Driver">
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="SOC Peripherals" Csub="PINCONF" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="Ensemble CMSIS_Driver">
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core">
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.12.0">
         <package name="flatbuffers" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.0.0">
         <package name="gemmlowp" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.4.5">
         <package name="kissfft" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.12.0">
         <package name="ruy" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0">
         <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
       <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="CMSIS-NN" Cvendor="tensorflow" Cversion="0.4.0" condition="CMSIS-NN">
         <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
     </components>
     <files>
+      <file attr="config" category="linkerScript" condition="ARMCC6" name="Device\M55_HP\Source\ARM\M55_HP.sct" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\M55_HP.sct</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\M55_HP\Config\M55_HP_map.h" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\M55_HP_map.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\M55_HP\RTE_Device.h" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\RTE_Device.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\M55_HP\Config\app_map.h" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\app_map.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\M55_HP\Config\global_map.h" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\global_map.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Device\M55_HP\Source\mpu_M55_HP.c" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\mpu_M55_HP.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Device\M55_HP\Config\partition_M55_HP.h" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\partition_M55_HP.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Device\M55_HP\Source\startup_M55_HP.c" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\startup_M55_HP.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Device\M55_HP\Source\system_M55_HP.c" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\system_M55_HP.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Device\M55_HP\Source\system_utils.c" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\system_utils.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="sourceC" name="Device\M55_HP\Source\tgu_M55_HP.c" version="1.0.0">
+        <instance index="0">RTE\Device\AE722F80F55D5AE_M55_HP\tgu_M55_HP.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvariant="C Startup" Cvendor="AlifSemiconductor" Cversion="1.0.0" condition="M55_HP CMSIS-Core"/>
+        <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0"/>
+        <targetInfos>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </file>
       <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\debug_log.cc" version="1.0">
         <instance index="0">RTE\Machine_Learning\debug_log.cc</instance>
         <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0"/>
         <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </file>
       <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\micro_time.cc" version="1.0">
@@ -599,7 +714,7 @@
         <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0"/>
         <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </file>
       <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\system_setup.cc" version="1.0">
@@ -607,7 +722,7 @@
         <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0"/>
         <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
         <targetInfos>
-          <targetInfo name="ARMCM55"/>
+          <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </file>
     </files>

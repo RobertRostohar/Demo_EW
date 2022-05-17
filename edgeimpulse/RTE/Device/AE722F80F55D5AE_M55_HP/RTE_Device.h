@@ -28,6 +28,17 @@
 #ifndef __RTE_DEVICE_H
 #define __RTE_DEVICE_H
 
+// <e> SILICON_REV_A  (Silicon Revison)
+// <i> Select if the Chip Silicon Rev is Ax
+#define RTE_SILICON_REV_A 	1
+#if RTE_SILICON_REV_A
+#define RTE_SILICON_REV_B0	0
+#else
+#define RTE_SILICON_REV_B0	1
+#endif
+// </e> SILICON_REV_A  (Silicon Revison)
+
+
 // <e> CAMERA0 (Camera) [Driver_CAMERA0]
 // <i> Configuration settings for Driver_CAMERA0 in component ::Drivers:CAMERA
 #define RTE_CAMERA0   1
@@ -53,6 +64,46 @@
 
 #endif
 // </e> CAMERA0 (Camera) [Driver_CAMERA0]
+
+// <e> MIPI_CSI2 (mipi csi2) [Driver_MIPI_CSI2]
+// <i> Configuration settings for Driver_MIPI_CSI2 in component ::Drivers:MIPI_CSI2
+#define RTE_MIPI_CSI2 1
+#if RTE_MIPI_CSI2
+#define RTE_MIPI_CSI2_PIXCLK_DIV       0x2
+#define RTE_MIPI_CSI2_N_LANES          2
+#define RTE_MIPI_CSI2_VC_ID            0
+#define RTE_MIPI_CSI2_DATA_TYPE        15
+#define RTE_MIPI_CSI2_IPI_MODE         0
+#define RTE_MIPI_CSI2_COLOR_COP        1
+#define RTE_MIPI_CSI2_MEMFLUSH         0
+#define RTE_MIPI_CSI2_IPI_HSA_TIME     0x5
+#define RTE_MIPI_CSI2_IPI_HBP_TIME     0xA
+#define RTE_MIPI_CSI2_IPI_HSD_TIME     0x118
+#define RTE_MIPI_CSI2_IPI_HACTIVE_TIME 0x230
+#define RTE_MIPI_CSI2_IPI_VSA_LINE     0x4
+#define RTE_MIPI_CSI2_IPI_VBP_LINE     0x4
+#define RTE_MIPI_CSI2_IPI_VFP_LINE     0x4
+#define RTE_MIPI_CSI2_IPI_VACTIVE_LINE 0x230
+#define RTE_MIPI_CSI2_IRQ_PRI          0
+#endif
+// </e> MIPI_CSI2 (mipi csi2) [Driver_MIPI_CSI2]
+
+// <e> MIPI_DPHY1 (mipi dphy) [Driver_MIPI_DPHY1]
+// <i> Configuration settings for Driver_MIPI_DPHY1 in component ::Drivers:MIPI_DPHY
+#define RTE_MIPI_DPHY1 1
+#if RTE_MIPI_DPHY1
+#define RTE_MIPI_DPHY1_NON_CONTINUOUS_CLOCK_MODE  1
+#define RTE_MIPI_DPHY1_PLL_INPUT_DIV_FACTOR_N     3
+#endif
+// </e> MIPI_DPHY1 (mipi dphy) [Driver_MIPI_DPHY1]
+
+// <e> MIPI_DPHY0 (mipi dphy) [Driver_MIPI_DPHY0]
+// <i> Configuration settings for Driver_MIPI_DPHY0 in component ::Drivers:MIPI_DPHY
+#define RTE_MIPI_DPHY0 1
+#if RTE_MIPI_DPHY0
+#define RTE_MIPI_DPHY0_NON_CONTINUOUS_CLOCK_MODE  1
+#endif
+// </e> MIPI_DPHY0 (mipi dphy) [Driver_MIPI_DPHY0]
 
 // <e> I3C0 (Improved Inter-Integrated Circuit) [Driver_I3C0]
 // <i> Configuration settings for Driver_I3C0 in component ::Drivers:I3C
@@ -124,7 +175,7 @@
 #ifdef RTE_I2S0
 #define RTE_I2S0_WSS_CLOCK_CYCLES 2
 #define RTE_I2S0_SCLKG_CLOCK_CYCLES 0
-#define RTE_I2S0_RX_TRIG_LVL 0
+#define RTE_I2S0_RX_TRIG_LVL 8
 #define RTE_I2S0_TX_TRIG_LVL 10
 #define RTE_I2S0_IRQ_PRI     0
 #define RTE_I2S0_CLK_SOURCE  1
@@ -137,8 +188,8 @@
 #ifdef RTE_I2S1
 #define RTE_I2S1_WSS_CLOCK_CYCLES 2
 #define RTE_I2S1_SCLKG_CLOCK_CYCLES 0
-#define RTE_I2S1_RX_TRIG_LVL 0
-#define RTE_I2S1_TX_TRIG_LVL 0
+#define RTE_I2S1_RX_TRIG_LVL 8
+#define RTE_I2S1_TX_TRIG_LVL 10
 #define RTE_I2S1_IRQ_PRI     0
 #define RTE_I2S1_CLK_SOURCE  1
 #endif
@@ -151,7 +202,7 @@
 #define RTE_I2S2_WSS_CLOCK_CYCLES 2
 #define RTE_I2S2_SCLKG_CLOCK_CYCLES 0
 #define RTE_I2S2_RX_TRIG_LVL 8
-#define RTE_I2S2_TX_TRIG_LVL 0
+#define RTE_I2S2_TX_TRIG_LVL 10
 #define RTE_I2S2_IRQ_PRI     10
 #define RTE_I2S2_CLK_SOURCE  1
 #endif
@@ -163,8 +214,8 @@
 #ifdef RTE_I2S3
 #define RTE_I2S3_WSS_CLOCK_CYCLES 2
 #define RTE_I2S3_SCLKG_CLOCK_CYCLES 0
-#define RTE_I2S3_RX_TRIG_LVL 0
-#define RTE_I2S3_TX_TRIG_LVL 0
+#define RTE_I2S3_RX_TRIG_LVL 8
+#define RTE_I2S3_TX_TRIG_LVL 10
 #define RTE_I2S3_IRQ_PRI     0
 #define RTE_I2S3_CLK_SOURCE  1
 #endif
@@ -200,7 +251,7 @@
 #define RTE_UART2   1
 #if RTE_UART2
 #define RTE_UART2_RX_TRIG_LVL   0
-#define RTE_UART2_TX_TRIG_LVL   3
+#define RTE_UART2_TX_TRIG_LVL   0
 #define RTE_UART2_IRQ_PRI       0
 #define RTE_UART2_CLK_SOURCE    1
 #endif
@@ -211,8 +262,8 @@
 // <i> Configuration settings for Driver_USART3 in component ::Drivers:USART
 #define RTE_UART3   1
 #if RTE_UART3
-#define RTE_UART3_RX_TRIG_LVL   2
-#define RTE_UART3_TX_TRIG_LVL   3
+#define RTE_UART3_RX_TRIG_LVL   0
+#define RTE_UART3_TX_TRIG_LVL   0
 #define RTE_UART3_IRQ_PRI       0
 #define RTE_UART3_CLK_SOURCE    1
 #endif
@@ -224,7 +275,7 @@
 #define RTE_UART4   1
 #if RTE_UART4
 #define RTE_UART4_RX_TRIG_LVL   0
-#define RTE_UART4_TX_TRIG_LVL   3
+#define RTE_UART4_TX_TRIG_LVL   0
 #define RTE_UART4_IRQ_PRI       0
 #define RTE_UART4_CLK_SOURCE    1
 
@@ -244,8 +295,8 @@
 // <i> Configuration settings for Driver_USART5 in component ::Drivers:USART
 #define RTE_UART5   1
 #if RTE_UART5
-#define RTE_UART5_RX_TRIG_LVL   2
-#define RTE_UART5_TX_TRIG_LVL   3
+#define RTE_UART5_RX_TRIG_LVL   0
+#define RTE_UART5_TX_TRIG_LVL   0
 #define RTE_UART5_IRQ_PRI       0
 #define RTE_UART5_CLK_SOURCE    1
 
@@ -411,6 +462,21 @@
 #endif /* RTE_GPIO3 */
 // </e> GPIO3 (General purpose input or output) [Driver_GPIO3]
 
+// <e> GPIO4 (General purpose input or output) [Driver_GPIO4]
+// <i> Configuration settings for Driver_GPIO4 in component ::Drivers:GPIO
+#define RTE_GPIO4   1
+#if RTE_GPIO4
+#define RTE_GPIO4_PIN0_IRQ_PRIORITY     (0)
+#define RTE_GPIO4_PIN1_IRQ_PRIORITY     (0)
+#define RTE_GPIO4_PIN2_IRQ_PRIORITY     (0)
+#define RTE_GPIO4_PIN3_IRQ_PRIORITY     (0)
+#define RTE_GPIO4_PIN4_IRQ_PRIORITY     (0)
+#define RTE_GPIO4_PIN5_IRQ_PRIORITY     (0)
+#define RTE_GPIO4_PIN6_IRQ_PRIORITY     (0)
+#define RTE_GPIO4_PIN7_IRQ_PRIORITY     (0)
+#endif /* RTE_GPIO4 */
+// </e> GPIO4 (General purpose input or output) [Driver_GPIO4]
+
 // <e> LPTIMER (Low power timer) [Driver_LPTIMER]
 // <i> Configuration settings for Driver_LPTIMER in component ::Drivers:LPTIMER
 #define RTE_LPTIMER			    1
@@ -419,34 +485,22 @@
 #define RTE_LPTIMER_CHANNEL0_IRQ_PRIORITY   (0)
 #define RTE_LPTIMER_CHANNEL0_PWM            (0)
 #define RTE_LPTIMER_CHANNEL0_FREE_RUN_MODE  (0)
+#define RTE_LPTIMER_CHANNEL0_CLK_SRC        (0)
 
 #define RTE_LPTIMER_CHANNEL1_IRQ_PRIORITY   (0)
 #define RTE_LPTIMER_CHANNEL1_PWM            (0)
 #define RTE_LPTIMER_CHANNEL1_FREE_RUN_MODE  (0)
+#define RTE_LPTIMER_CHANNEL1_CLK_SRC        (0)
 
 #define RTE_LPTIMER_CHANNEL2_IRQ_PRIORITY   (0)
 #define RTE_LPTIMER_CHANNEL2_PWM            (0)
 #define RTE_LPTIMER_CHANNEL2_FREE_RUN_MODE  (0)
+#define RTE_LPTIMER_CHANNEL2_CLK_SRC        (0)
 
 #define RTE_LPTIMER_CHANNEL3_IRQ_PRIORITY   (0)
 #define RTE_LPTIMER_CHANNEL3_PWM            (0)
 #define RTE_LPTIMER_CHANNEL3_FREE_RUN_MODE  (0)
-
-#define RTE_LPTIMER_CHANNEL4_IRQ_PRIORITY   (0)
-#define RTE_LPTIMER_CHANNEL4_PWM            (0)
-#define RTE_LPTIMER_CHANNEL4_FREE_RUN_MODE  (0)
-
-#define RTE_LPTIMER_CHANNEL5_IRQ_PRIORITY   (0)
-#define RTE_LPTIMER_CHANNEL5_PWM            (0)
-#define RTE_LPTIMER_CHANNEL5_FREE_RUN_MODE  (0)
-
-#define RTE_LPTIMER_CHANNEL6_IRQ_PRIORITY   (0)
-#define RTE_LPTIMER_CHANNEL6_PWM            (0)
-#define RTE_LPTIMER_CHANNEL6_FREE_RUN_MODE  (0)
-
-#define RTE_LPTIMER_CHANNEL7_IRQ_PRIORITY   (0)
-#define RTE_LPTIMER_CHANNEL7_PWM            (0)
-#define RTE_LPTIMER_CHANNEL7_FREE_RUN_MODE  (0)
+#define RTE_LPTIMER_CHANNEL3_CLK_SRC        (0)
 #endif /* RTE_LPTIMER */
 // </e> LPTIMER (Low power timer) [Driver_LPTIMER]
 
@@ -709,5 +763,112 @@
 #define RTE_UTIMER_CHANNEL11_UNDER_FLOW_IRQ_PRIORITY 0
 #endif /*RTE_UTIMER*/
 // </e> UTIMER (Universal timer) [Driver_UTIMER]
+
+
+// </e> Analog configuration [vbat analog register2 and comparator register2]
+#define RTE_ANALOG_CONFIG          1
+#if RTE_ANALOG_CONFIG
+#define RTE_VBAT_ANA_REG2_VAL      (0x388C4230)
+#define RTE_COMP_REG2_VAL          (0x10200000 | 0x14240100)
+#endif
+// </e> Analog configuration [vbat analog register2 and comparator register2]
+
+// <e> DAC0 (Digital to analog converter ) [Driver_DAC0]
+// <i> Configuration settings for Driver_DAC0 in component ::Drivers:DAC
+#define RTE_DAC0                   1
+#if RTE_DAC0
+#define RTE_DAC0_INPUT_BYP_MUX_EN  0
+#define RTE_DAC0_BYP_VAL           (0x1FF)
+#define RTE_DAC0_CAP_CONT          (0X07)
+#define RTE_DAC0_RES_CONT          (0X0C)
+#define RTE_DAC0_TWOSCOMP_EN        0
+#define RTE_DAC0_IBIAS             (0X0C)
+#endif
+// </e> DAC0 (Digital to analog converter) [Driver_DAC0]
+
+// <e> DAC1 (Digital to analog converter ) [Driver_DAC1]
+// <i> Configuration settings for Driver_DAC1 in component ::Drivers:DAC
+#define RTE_DAC1                   1
+#if RTE_DAC1
+#define RTE_DAC1_INPUT_BYP_MUX_EN  0
+#define RTE_DAC1_BYP_VAL           (0x1FF)
+#define RTE_DAC1_CAP_CONT          (0X07)
+#define RTE_DAC1_RES_CONT          (0X0C)
+#define RTE_DAC1_TWOSCOMP_EN        0
+#define RTE_DAC1_IBIAS             (0X0C)
+#endif
+// </e> DAC1 (Digital to Analog converter) [Driver_DAC1]
+
+// <e> ADC0 (Analog to Digital Converter) [Driver_ADC0]
+// <i> Configuration settings for Driver_ADC0 in component ::Drivers:ADC
+#define RTE_ADC0     1
+#if RTE_ADC0
+#define RTE_ADC0_IRQ_PRIORITY        0
+
+#define RTE_ADC0_INPUT_NUM               (0)
+#define RTE_ADC0_CLOCK_DIV               (2)
+#define RTE_ADC0_SAMPLE_WIDTH            (16)
+#define RTE_ADC0_AVG_SAMPLE_NUM          (256)
+#define RTE_ADC0_SHIFT_N_BIT             (8)
+#define RTE_ADC0_SHIFT_LEFT_OR_RIGHT     (1)
+
+#define RTE_ADC0_TEST_EN                  0
+#define RTE_ADC0_DIFFERENTIAL_EN          0
+#define RTE_ADC0_COMPARATOR_EN            1
+#define RTE_ADC0_COMPARATOR_BIAS          2
+#define RTE_ADC0_VCM_RDIV_EN              1
+
+#endif
+// </e> ADC0 (Analog to Digital Converter) [Driver_ADC0]
+
+// <e> ADC1 (Analog to Digital Converter) [Driver_ADC1]
+// <i> Configuration settings for Driver_ADC1 in component ::Drivers:ADC
+#define RTE_ADC1   1
+#if RTE_ADC1
+
+#define RTE_ADC1_INPUT_NUM               (0)
+#define RTE_ADC1_CLOCK_DIV               (2)
+#define RTE_ADC1_SAMPLE_WIDTH            (16)
+#define RTE_ADC1_AVG_SAMPLE_NUM          (256)
+#define RTE_ADC1_SHIFT_N_BIT             (8)
+#define RTE_ADC1_SHIFT_LEFT_OR_RIGHT     (1)
+
+#define RTE_ADC1_TEST_EN                  0
+#define RTE_ADC1_DIFFERENTIAL_EN          0
+#define RTE_ADC1_COMPARATOR_EN            1
+#define RTE_ADC1_COMPARATOR_BIAS          2
+#define RTE_ADC1_VCM_RDIV_EN              1
+
+#endif
+// </e> ADC1 (Analog to Digital Converter) [Driver_ADC1]
+
+// <e> ADC2 (Analog to Digital Converter) [Driver_ADC2]
+// <i> Configuration settings for Driver_ADC2 in component ::Drivers:ADC
+#define RTE_ADC2   1
+#if RTE_ADC2
+
+#define RTE_ADC2_INPUT_NUM               (0)
+#define RTE_ADC2_CLOCK_DIV               (2)
+#define RTE_ADC2_SAMPLE_WIDTH            (16)
+#define RTE_ADC2_AVG_SAMPLE_NUM          (256)
+#define RTE_ADC2_SHIFT_N_BIT             (8)
+#define RTE_ADC2_SHIFT_LEFT_OR_RIGHT     (1)
+
+#define RTE_ADC2_TEST_EN                  0
+#define RTE_ADC2_DIFFERENTIAL_EN          0
+#define RTE_ADC2_COMPARATOR_EN            1
+#define RTE_ADC2_COMPARATOR_BIAS          2
+#define RTE_ADC2_VCM_RDIV_EN              1
+
+#endif
+// <e> ADC2 (Analog to Digital Converter) [Driver_ADC2]
+
+// </e> ADC common bits for each instance
+// <i> Configuration settings for ADC instances ::Drivers:ADC
+#if (RTE_ADC0 | RTE_ADC1 | RTE_ADC2)
+#define RTE_ADC_CONFG_RESERVED_bits_18_23           7
+#define RTE_ADC_CONFG_amux_cont                     0
+#endif
+// </e> ADC commmon bit for each instance
 
 #endif  /* __RTE_DEVICE_H */

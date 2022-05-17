@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Arm Limited. All rights reserved.
+ * Copyright (c) 2021-2022 Arm Limited. All rights reserved.
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,31 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IRQS_H
-#define IRQS_H
+
+#ifndef SYSTICK_H
+#define SYSTICK_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "peripheral_irqs.h"
-
-#include <stdint.h>
-
-/* Interrupt handler function type. */
-typedef void (*const irq_vec_type)(void);
-
-/**
- *  @brief  Reset interrupt handler and also, the starting
- *          point of the application.
- **/
-extern void Reset_Handler(void);
-
-/**
- * @brief   Gets the system tick triggered cycle counter for the CPU.
- * @return  64-bit counter value.
- **/
-extern uint64_t Get_SysTick_Cycle_Count(void);
 
 /**
  * @brief   Initialises the system tick registers.
@@ -47,8 +29,14 @@ extern uint64_t Get_SysTick_Cycle_Count(void);
  **/
 extern int Init_SysTick(void);
 
+/**
+ * @brief   Gets the system tick triggered cycle counter for the CPU.
+ * @return  64-bit counter value.
+ **/
+extern uint64_t Get_SysTick_Cycle_Count(void);
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* IRQS_H */
+#endif /* SYSTICK_H */
