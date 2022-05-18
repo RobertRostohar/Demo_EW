@@ -42,7 +42,9 @@ void* __stack_chk_guard = (void*)0xaeaeaeae;
 
 int main()
 {
-    // System init takes place in Reset function, see irqs.c
+    // System init takes place in Reset function
+
+    UartStdOutInit();
 
     #if defined(ARM_NPU)
 
@@ -52,8 +54,6 @@ int main()
     }
 
     #endif /* ARM_NPU */
-
-    UartStdOutInit();
 
     ei_impulse_result_t result;
 

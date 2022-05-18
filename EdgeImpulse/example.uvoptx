@@ -445,7 +445,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DbgFMv8M</Key>
-          <Name>-I -S -L"cpu0" -O200710 -C0 -MC"$KARM\VHT\VHT_Corstone_SSE-300_Ethos-U55.exe" -MF -PF -MA</Name>
+          <Name>-I -S -L"cpu0" -O200710 -C0 -MC"$KARM\VHT\VHT_Corstone_SSE-300_Ethos-U55.exe" -MF -PF -MA"-C ethosu.num_macs=256"</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>

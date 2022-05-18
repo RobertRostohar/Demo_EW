@@ -338,7 +338,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
+              <Define>ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
               <Undefine></Undefine>
               <IncludePath>.\source</IncludePath>
             </VariousControls>
@@ -936,7 +936,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>EI_ETHOS EI_CONFIG_ETHOS_U55_128 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
+              <Define>ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_128 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
               <Undefine></Undefine>
               <IncludePath>.\source</IncludePath>
             </VariousControls>
@@ -1534,7 +1534,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
+              <Define>ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
               <Undefine></Undefine>
               <IncludePath>.\source</IncludePath>
             </VariousControls>
@@ -1819,48 +1819,48 @@
           <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="ethos-u-core-driver" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="ARM" version="0.4.0">
-        <targetInfos>
-          <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
-          <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
-          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
-        </targetInfos>
-      </package>
       <package name="Ensemble" schemaVersion="1.4" url="https://www.alifsemi.com/" vendor="AlifSemiconductor" version="0.2.0">
         <targetInfos>
           <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="flatbuffers" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
+      <package name="ethos-u-core-driver" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="Arm" version="1.22.02">
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="gemmlowp" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
+      <package name="flatbuffers" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02">
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="kissfft" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
+      <package name="gemmlowp" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02">
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="ruy" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
+      <package name="kissfft" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02">
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
         </targetInfos>
       </package>
-      <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0">
+      <package name="ruy" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02">
+        <targetInfos>
+          <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
+          <targetInfo name="Alif E7 M55_HP" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02">
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55" versionMatchMode="fixed"/>
           <targetInfo name="Alif E7 M55_HE" versionMatchMode="fixed"/>
@@ -1921,14 +1921,6 @@
           <targetInfo name="AVH_Corstone-300_U55"/>
         </targetInfos>
       </component>
-      <component Cclass="Machine Learning" Cgroup="NPU Support" Csub="Ethos-U Driver" Cvariant="U55" Cvendor="ARM" Cversion="1.0.5">
-        <package name="ethos-u-core-driver" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="ARM" version="0.4.0"/>
-        <targetInfos>
-          <targetInfo name="AVH_Corstone-300_U55"/>
-          <targetInfo name="Alif E7 M55_HE"/>
-          <targetInfo name="Alif E7 M55_HP"/>
-        </targetInfos>
-      </component>
       <component Cclass="Native Driver" Cgroup="UART" Cvendor="ARM" Cversion="1.0.0" condition="SSE-300-MPS3 Device">
         <package name="V2M_MPS3_SSE_300_BSP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="1.2.0"/>
         <targetInfos>
@@ -1961,48 +1953,56 @@
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
-      <component Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.12.0">
-        <package name="flatbuffers" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <component Cclass="Machine Learning" Cgroup="NPU Support" Csub="Ethos-U Driver" Cvariant="Generic U55/U65" Cvendor="Arm" Cversion="1.22.02">
+        <package name="ethos-u-core-driver" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="Arm" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
-      <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.0.0">
-        <package name="gemmlowp" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <component Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.22.02">
+        <package name="flatbuffers" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
-      <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.4.5">
-        <package name="kissfft" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.22.02">
+        <package name="gemmlowp" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
-      <component Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.12.0">
-        <package name="ruy" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.22.02">
+        <package name="kissfft" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
-      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0">
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <component Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow" Cvendor="tensorflow" Cversion="1.22.02">
+        <package name="ruy" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </component>
-      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="CMSIS-NN" Cvendor="tensorflow" Cversion="0.4.0" condition="CMSIS-NN">
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="1.22.02">
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
+        <targetInfos>
+          <targetInfo name="AVH_Corstone-300_U55"/>
+          <targetInfo name="Alif E7 M55_HE"/>
+          <targetInfo name="Alif E7 M55_HP"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="Ethos-U" Cvendor="tensorflow" Cversion="1.22.02" condition="Ethos-U">
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
@@ -2259,30 +2259,30 @@
           <targetInfo name="AVH_Corstone-300_U55"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\debug_log.cc" version="1.0">
-        <instance index="0">RTE\Machine_Learning\debug_log.cc</instance>
-        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0"/>
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\debug_log.cpp" version="1.22.02">
+        <instance index="0">RTE\Machine_Learning\debug_log.cpp</instance>
+        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="1.22.02"/>
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\micro_time.cc" version="1.0">
-        <instance index="0">RTE\Machine_Learning\micro_time.cc</instance>
-        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0"/>
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\micro_time.cpp" version="1.22.02">
+        <instance index="0">RTE\Machine_Learning\micro_time.cpp</instance>
+        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="1.22.02"/>
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>
           <targetInfo name="Alif E7 M55_HP"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\system_setup.cc" version="1.0">
-        <instance index="0">RTE\Machine_Learning\system_setup.cc</instance>
-        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.4.0"/>
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" version="0.4.0"/>
+      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\system_setup.cpp" version="1.22.02">
+        <instance index="0">RTE\Machine_Learning\system_setup.cpp</instance>
+        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="1.22.02"/>
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" version="1.22.02"/>
         <targetInfos>
           <targetInfo name="AVH_Corstone-300_U55"/>
           <targetInfo name="Alif E7 M55_HE"/>

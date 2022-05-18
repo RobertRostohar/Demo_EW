@@ -28,7 +28,7 @@
 
 #include "ethosu_driver.h"              /* Arm Ethos-U driver header */
 
-extern struct ethosu_driver ethosu_drv; /* Default Ethos-U device driver */
+/*extern*/ struct ethosu_driver ethosu_drv; /* Default Ethos-U device driver */
 
 #endif /* ARM_NPU */
 
@@ -53,7 +53,7 @@ static void arm_npu_irq_init(void)
 
     /* Register the EthosU IRQ handler in our vector table.
      * Note, this handler comes from the EthosU driver */
-    NVIC_ClearPendingIRQ(336);
+    NVIC_ClearPendingIRQ(ethosu_irqnum);
     NVIC_SetVector(ethosu_irqnum, (uint32_t)arm_npu_irq_handler);
 
     /* Enable the IRQ */
@@ -87,22 +87,22 @@ int arm_npu_init(void)
     info("Ethos-U device initialised\n");
 
     /* Get Ethos-U version */
-    struct ethosu_version version;
-    if (0 != (err = ethosu_get_version(&ethosu_drv, &version))) {
-        printf_err("failed to fetch Ethos-U version info\n");
-        return err;
-    }
+//    struct ethosu_version version;
+//    if (0 != (err = ethosu_get_version(&ethosu_drv, &version))) {
+//        printf_err("failed to fetch Ethos-U version info\n");
+//        return err;
+//    }
 
-    info("Ethos-U version info:\n");
-    info("\tArch:       v%u.%u.%u\n", version.id.arch_major_rev,
-                                    version.id.arch_minor_rev,
-                                    version.id.arch_patch_rev);
-    info("\tDriver:     v%u.%u.%u\n", version.id.driver_major_rev,
-                                    version.id.driver_minor_rev,
-                                    version.id.driver_patch_rev);
-    info("\tMACs/cc:    %u\n", (1 << version.cfg.macs_per_cc));
-    info("\tCmd stream: v%u\n", version.cfg.cmd_stream_version);
-    info("\tSHRAM size: %u\n", version.cfg.shram_size);
+//    info("Ethos-U version info:\n");
+//    info("\tArch:       v%u.%u.%u\n", version.id.arch_major_rev,
+//                                    version.id.arch_minor_rev,
+//                                    version.id.arch_patch_rev);
+//    info("\tDriver:     v%u.%u.%u\n", version.id.driver_major_rev,
+//                                    version.id.driver_minor_rev,
+//                                    version.id.driver_patch_rev);
+//    info("\tMACs/cc:    %u\n", (1 << version.cfg.macs_per_cc));
+//    info("\tCmd stream: v%u\n", version.cfg.cmd_stream_version);
+//    info("\tSHRAM size: %u\n", version.cfg.shram_size);
 
     return 0;
 }
