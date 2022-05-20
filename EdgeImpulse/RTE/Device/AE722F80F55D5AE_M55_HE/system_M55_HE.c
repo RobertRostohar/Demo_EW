@@ -147,7 +147,15 @@ void SystemInit (void)
 {
 
 #if defined (__VTOR_PRESENT) && (__VTOR_PRESENT == 1U)
+#if defined (REMAP_VECTORS)
+  /* Copy Vector table */
+  for (uint32_t n = 0U; n < (sizeof(__VECTOR_TABLE)/sizeof(uint32_t)); n++) {
+    *((volatile uint32_t *)ITCM_BASE + n) = (uint32_t)__VECTOR_TABLE[n];
+  }
+  SCB->VTOR = ITCM_BASE;
+#else
   SCB->VTOR = (uint32_t)(&__VECTOR_TABLE[0]);
+#endif
 #endif
 
 #if (defined (__FPU_USED) && (__FPU_USED == 1U)) || \
@@ -167,13 +175,13 @@ void SystemInit (void)
 #endif
 #ifdef __DCACHE_PRESENT
  /*Enable DCache*/
-  SCB_InvalidateDCache();
-  SCB_EnableDCache();
+//SCB_InvalidateDCache();
+//SCB_EnableDCache();
 #endif
 
 // Enable Loop and branch info cache
-SCB->CCR |= SCB_CCR_LOB_Msk;
-__ISB();
+  SCB->CCR |= SCB_CCR_LOB_Msk;
+  __ISB();
 
 #if defined (__MPU_PRESENT)
   MPU_Setup();

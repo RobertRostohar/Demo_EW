@@ -56,6 +56,9 @@ static void arm_npu_irq_init(void)
     NVIC_ClearPendingIRQ(ethosu_irqnum);
     NVIC_SetVector(ethosu_irqnum, (uint32_t)arm_npu_irq_handler);
 
+    /* Set IRQ Priority */
+    NVIC_SetPriority(ethosu_irqnum, 1);
+
     /* Enable the IRQ */
     NVIC_EnableIRQ(ethosu_irqnum);
 

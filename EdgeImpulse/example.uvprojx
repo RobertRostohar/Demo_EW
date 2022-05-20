@@ -338,7 +338,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
+              <Define>REMAP_VECTORS ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_CLASSIFIER_ALLOCATION_STATIC</Define>
               <Undefine></Undefine>
               <IncludePath>.\source</IncludePath>
             </VariousControls>
@@ -371,12 +371,12 @@
             <TextAddressRange>0x10000000</TextAddressRange>
             <DataAddressRange>0x30000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile>.\ensemble.sct</ScatterFile>
+            <ScatterFile>.\RTE\Device\AE722F80F55D5AE_M55_HP\M55_HP.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
             <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings>6439</DisabledWarnings>
+            <DisabledWarnings>6439,6312,6314</DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>
@@ -1005,7 +1005,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_128 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
+              <Define>REMAP_VECTORS ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_128 EI_CLASSIFIER_ALLOCATION_STATIC</Define>
               <Undefine></Undefine>
               <IncludePath>.\source</IncludePath>
             </VariousControls>
@@ -1038,12 +1038,12 @@
             <TextAddressRange>0x10000000</TextAddressRange>
             <DataAddressRange>0x30000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile>.\ensemble.sct</ScatterFile>
+            <ScatterFile>.\RTE\Device\AE722F80F55D5AE_M55_HE\M55_HE.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
             <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings>6439</DisabledWarnings>
+            <DisabledWarnings>6439,6312,6314</DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>
@@ -1672,7 +1672,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_ALIF_ADDR_TRANSLATION EI_CLASSIFIER_ALLOCATION_STATIC</Define>
+              <Define>ARM_NPU ETHOSU55 ETHOSU_ARCH=U55 EI_ETHOS EI_CONFIG_ETHOS_U55_256 EI_CLASSIFIER_ALLOCATION_STATIC</Define>
               <Undefine></Undefine>
               <IncludePath>.\source</IncludePath>
             </VariousControls>

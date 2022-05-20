@@ -38,7 +38,7 @@
 ; </h>
  *----------------------------------------------------------------------------*/
 #define __STACK_SIZE    0x00002000
-#define __HEAP_SIZE     0x00001000
+#define __HEAP_SIZE     0x00008000
 #define __APP_HEAP_SIZE 0x00008000
 
 /*
@@ -60,22 +60,26 @@
 
 #define __RW_BASE       __RAM_BASE
 #define __RW_SIZE      (__RAM_SIZE - __STACK_SIZE - __HEAP_SIZE - __APP_HEAP_SIZE)
+#define VECT_SIZE       0x0800
 
-
-LR_ROM __ROM_BASE __ROM_SIZE  {                       ; load region size_region
+LR_ROM __ROM_BASE NOCOMPRESS __ROM_SIZE  {                       ; load region size_region
   M55_HE_ROM +0 __ROM_SIZE  {                 ; load address = execution address
    *.o (RESET, +First)
+   startup_*.o (+RO)
+   system_*.o (+RO)
+   mpu_*.o (*MPU_Setup)
+   systick.o (*Init_SysTick)
    *(InRoot$$Sections)
-   .ANY (+RO)
-   .ANY (+XO)
   }
 
-  ITCM_RAM __ITCM_BASE __ITCM_SIZE  {                     ; RW code
+  ITCM_VECT __ITCM_BASE EMPTY UNINIT VECT_SIZE  { }
+  ITCM_RAM +0 __ITCM_SIZE - VECT_SIZE {                     ; RW code
    ; Specify objects intended to execute out of ITCM
+   .ANY (+RO)
   }
 
   RW_RAM __RW_BASE __RW_SIZE  {                     ; RW data
-   .ANY (+RW +ZI)
+   .ANY2 (+RW +ZI)
   }
 
 #if __HEAP_SIZE > 0
@@ -94,7 +98,8 @@ LR_ROM __ROM_BASE __ROM_SIZE  {                       ; load region size_region
   }
 
   RW_SRAM0 SRAM0_BASE SRAM0_SIZE  {  ; Update sections as needed
-
+   trained_model_compiled.o(*tensor_*)
+   .ANY1 (+RW +ZI)
   }
   RW_SRAM1 SRAM1_BASE SRAM1_SIZE  {  ; Update sections as needed
    * (camera_frame_buf)              ; Camera Frame Buffer
