@@ -28,7 +28,7 @@
 
 #include "ethosu_driver.h"              /* Arm Ethos-U driver header */
 
-/*extern*/ struct ethosu_driver ethosu_drv; /* Default Ethos-U device driver */
+struct ethosu_driver ethosu_drv; /* Default Ethos-U device driver */
 
 #endif /* ARM_NPU */
 
@@ -86,23 +86,30 @@ int arm_npu_init(void)
 
     info("Ethos-U device initialised\n");
 
-    /* Get Ethos-U version */
-//    struct ethosu_version version;
-//    if (0 != (err = ethosu_get_version(&ethosu_drv, &version))) {
-//        printf_err("failed to fetch Ethos-U version info\n");
-//        return err;
-//    }
+    info("Ethos-U information:\n");
 
-//    info("Ethos-U version info:\n");
-//    info("\tArch:       v%u.%u.%u\n", version.id.arch_major_rev,
-//                                    version.id.arch_minor_rev,
-//                                    version.id.arch_patch_rev);
-//    info("\tDriver:     v%u.%u.%u\n", version.id.driver_major_rev,
-//                                    version.id.driver_minor_rev,
-//                                    version.id.driver_patch_rev);
-//    info("\tMACs/cc:    %u\n", (1 << version.cfg.macs_per_cc));
-//    info("\tCmd stream: v%u\n", version.cfg.cmd_stream_version);
-//    info("\tSHRAM size: %u\n", version.cfg.shram_size);
+    /* Get Ethos-U hardware info */
+    struct ethosu_hw_info hw_info;
+    ethosu_get_hw_info(&ethosu_drv, &hw_info);
+
+    info("\tArch:       v%u.%u.%u\n", hw_info.version.arch_major_rev,
+                                      hw_info.version.arch_minor_rev,
+                                      hw_info.version.arch_patch_rev);
+    info("\tProduct:    v%u\n",       hw_info.version.product_major);
+    info("\tVersion:    v%u.%u.%u\n", hw_info.version.version_major,
+                                      hw_info.version.version_minor,
+                                      hw_info.version.version_status);
+    info("\tMACs/cc:    %u\n",        (1 << hw_info.cfg.macs_per_cc));
+    info("\tCmd stream: v%u\n",       hw_info.cfg.cmd_stream_version);
+    info("\tCustom DMA: %u\n",        hw_info.cfg.custom_dma);
+
+    /* Get Ethos-U driver version */
+    struct ethosu_driver_version version;
+    ethosu_get_driver_version(&version);
+
+    info("\tDriver:     v%u.%u.%u\n", version.major,
+                                      version.minor,
+                                      version.patch);
 
     return 0;
 }
