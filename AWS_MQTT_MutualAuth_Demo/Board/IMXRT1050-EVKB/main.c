@@ -48,14 +48,16 @@ int main (void) {
   BOARD_InitBootClocks();
   BOARD_InitDebugConsole();
 
-  // Enable ENET_REF_CLK output mode
-  IOMUXC_EnableMode(IOMUXC_GPR, kIOMUXC_GPR_ENET1TxClkOutputDir, true);
-
   NVIC_SetPriority(ENET_IRQn,    8U);
   NVIC_SetPriority(USDHC1_IRQn,  8U);
   NVIC_SetPriority(LPUART3_IRQn, 8U);
 
   SystemCoreClockUpdate();
+
+  /* Reset PHY (Required 100 us delay for PHY power on reset) */
+  GPIO_PinWrite(GPIO1,  9U, 0U);
+  SDK_DelayAtLeastUs(500U, CLOCK_GetFreq(kCLOCK_CpuClk));
+  GPIO_PinWrite(GPIO1,  9U, 1U);
 
 #ifdef RTE_VIO_BOARD
   vioInit();                            // Initialize Virtual I/O
