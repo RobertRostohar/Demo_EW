@@ -117,8 +117,10 @@ Connectivity: Socket interface with VSocket
   - when running standalone (via command line) and VHT executable in path):  
     `VHT_MPS3_Corstone_SSE-300 -C mps3_board.visualisation.disable-visualisation=1 -C mps3_board.telnetterminal0.start_telnet=0 -C mps3_board.uart0.out_file=- -a <image>`
 
-  
-    
-    
 
+## Edge Impulse example
+
+Subdirectory: `EdgeImpulse`
+
+Machine learning demo. See details in [README.md](EdgeImpulse/README.md).
 
