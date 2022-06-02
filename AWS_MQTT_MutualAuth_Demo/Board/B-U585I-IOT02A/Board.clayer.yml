@@ -32,6 +32,9 @@ layer:
   add-paths:
     - .
 
+  defines:
+    - MX_WIFI_SPI_DMA=0   # Do not use DMA if TZEN=1
+
   components:
     - component: Keil::Device:Startup
 
