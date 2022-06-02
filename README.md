@@ -5,7 +5,7 @@ Demo examples for Embedded World
 ## Prerequisites
 
 Tools:
- - [CMSIS-Toolbox 0.10.1](https://github.com/Open-CMSIS-Pack/devtools/releases/tag/tools%2Ftoolbox%2F0.10.1)
+ - [CMSIS-Toolbox 0.10.2](https://github.com/Open-CMSIS-Pack/devtools/releases/tag/tools%2Ftoolbox%2F0.10.2)
  - [Keil MDK 5.37](https://www.keil.com/download/product)
  - Arm Compiler 6.18 (part of MDK)
 
