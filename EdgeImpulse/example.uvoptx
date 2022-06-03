@@ -561,8 +561,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\source\tflite-model\trained_model_compiled.cpp</PathWithFileName>
-      <FilenameWithoutPath>trained_model_compiled.cpp</FilenameWithoutPath>
+      <PathWithFileName>.\source\tflite-model\tflite-trained.cpp</PathWithFileName>
+      <FilenameWithoutPath>tflite-trained.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

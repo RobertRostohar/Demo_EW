@@ -98,7 +98,8 @@ LR_ROM __ROM_BASE NOCOMPRESS __ROM_SIZE  {                       ; load region s
   }
 
   RW_SRAM0 SRAM0_BASE SRAM0_SIZE  {  ; Update sections as needed
-   trained_model_compiled.o(*tensor_*)
+    main.o(*trained_tflite)
+    main.o(*tensor_arena)
    .ANY1 (+RW +ZI)
   }
   RW_SRAM1 SRAM1_BASE SRAM1_SIZE  {  ; Update sections as needed

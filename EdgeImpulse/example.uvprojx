@@ -400,9 +400,9 @@
           <GroupName>tflite-model</GroupName>
           <Files>
             <File>
-              <FileName>trained_model_compiled.cpp</FileName>
+              <FileName>tflite-trained.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\source\tflite-model\trained_model_compiled.cpp</FilePath>
+              <FilePath>.\source\tflite-model\tflite-trained.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -1067,9 +1067,9 @@
           <GroupName>tflite-model</GroupName>
           <Files>
             <File>
-              <FileName>trained_model_compiled.cpp</FileName>
+              <FileName>tflite-trained.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\source\tflite-model\trained_model_compiled.cpp</FilePath>
+              <FilePath>.\source\tflite-model\tflite-trained.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -1734,9 +1734,9 @@
           <GroupName>tflite-model</GroupName>
           <Files>
             <File>
-              <FileName>trained_model_compiled.cpp</FileName>
+              <FileName>tflite-trained.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\source\tflite-model\trained_model_compiled.cpp</FilePath>
+              <FilePath>.\source\tflite-model\tflite-trained.cpp</FilePath>
             </File>
           </Files>
         </Group>
