@@ -68,7 +68,7 @@
 #endif
 
 /* User errno from newlibc */
-#define LWIP_ERRNO_STDINCLUDE
+//#define LWIP_ERRNO_STDINCLUDE
 
 /* Define generic types used in lwIP */
 #define LWIP_NO_STDINT_H    1

@@ -53,7 +53,7 @@
 
 /*#define TCP_LISTEN_BACKLOG            1 */
 
-#define LWIP_TIMEVAL_PRIVATE    0
+#define LWIP_TIMEVAL_PRIVATE    1
 
 /**
  * NO_SYS==1: Provides VERY minimal functionality. Otherwise,

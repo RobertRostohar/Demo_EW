@@ -8,8 +8,8 @@
   <Targets>
     <Target>
       <TargetName>B-U585I-IOT02A</TargetName>
-      <ToolsetNumber>0x3</ToolsetNumber>
-      <ToolsetName>ARM-GNU</ToolsetName>
+      <ToolsetNumber>0x4</ToolsetNumber>
+      <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>6180000::V6.18::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
@@ -132,7 +132,7 @@
             <UseTargetDll>1</UseTargetDll>
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
-            <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
+            <UpdateFlashBeforeDebugging>0</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
             <DriverSelection>4102</DriverSelection>
           </Flash1>
@@ -145,9 +145,9 @@
           <pFcArmRoot></pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
-        <TargetArm>
-          <ArmMisc>
-            <asLst>0</asLst>
+        <TargetArmAds>
+          <ArmAdsMisc>
+            <GenerateListings>0</GenerateListings>
             <asHll>1</asHll>
             <asAsm>1</asAsm>
             <asMacX>1</asMacX>
@@ -155,11 +155,27 @@
             <asFals>1</asFals>
             <asDbgD>1</asDbgD>
             <asForm>1</asForm>
-            <ldLst>1</ldLst>
+            <ldLst>0</ldLst>
             <ldmm>1</ldmm>
             <ldXref>1</ldXref>
             <BigEnd>0</BigEnd>
-            <GCPUTYP>"Cortex-M33"</GCPUTYP>
+            <AdsALst>1</AdsALst>
+            <AdsACrf>1</AdsACrf>
+            <AdsANop>0</AdsANop>
+            <AdsANot>0</AdsANot>
+            <AdsLLst>1</AdsLLst>
+            <AdsLmap>1</AdsLmap>
+            <AdsLcgr>1</AdsLcgr>
+            <AdsLsym>1</AdsLsym>
+            <AdsLszi>1</AdsLszi>
+            <AdsLtoi>1</AdsLtoi>
+            <AdsLsun>1</AdsLsun>
+            <AdsLven>1</AdsLven>
+            <AdsLsxf>1</AdsLsxf>
+            <RvctClst>0</RvctClst>
+            <GenPPlst>0</GenPPlst>
+            <AdsCpuType>"Cortex-M33"</AdsCpuType>
+            <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
@@ -173,6 +189,30 @@
             <nBranchProt>0</nBranchProt>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
+            <StupSel>0</StupSel>
+            <useUlib>0</useUlib>
+            <EndSel>0</EndSel>
+            <uLtcg>0</uLtcg>
+            <nSecure>0</nSecure>
+            <RoSelD>0</RoSelD>
+            <RwSelD>5</RwSelD>
+            <CodeSel>0</CodeSel>
+            <OptFeed>0</OptFeed>
+            <NoZi1>0</NoZi1>
+            <NoZi2>0</NoZi2>
+            <NoZi3>0</NoZi3>
+            <NoZi4>0</NoZi4>
+            <NoZi5>0</NoZi5>
+            <Ro1Chk>0</Ro1Chk>
+            <Ro2Chk>0</Ro2Chk>
+            <Ro3Chk>0</Ro3Chk>
+            <Ir1Chk>0</Ir1Chk>
+            <Ir2Chk>0</Ir2Chk>
+            <Ra1Chk>0</Ra1Chk>
+            <Ra2Chk>0</Ra2Chk>
+            <Ra3Chk>0</Ra3Chk>
+            <Im1Chk>0</Im1Chk>
+            <Im2Chk>0</Im2Chk>
             <OnChipMemories>
               <Ocm1>
                 <Type>0</Type>
@@ -219,60 +259,126 @@
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </XRAM>
-              <IRAM2>
-                <Type>0</Type>
-                <StartAddress>0x20040000</StartAddress>
-                <Size>0x80000</Size>
-              </IRAM2>
-              <IROM2>
+              <OCR_RVCT1>
+                <Type>1</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT1>
+              <OCR_RVCT2>
+                <Type>1</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT2>
+              <OCR_RVCT3>
+                <Type>1</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT3>
+              <OCR_RVCT4>
+                <Type>1</Type>
+                <StartAddress>0x8000000</StartAddress>
+                <Size>0x200000</Size>
+              </OCR_RVCT4>
+              <OCR_RVCT5>
+                <Type>1</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT5>
+              <OCR_RVCT6>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
-              </IROM2>
+              </OCR_RVCT6>
+              <OCR_RVCT7>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT7>
+              <OCR_RVCT8>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
+              </OCR_RVCT8>
+              <OCR_RVCT9>
+                <Type>0</Type>
+                <StartAddress>0x20000000</StartAddress>
+                <Size>0x40000</Size>
+              </OCR_RVCT9>
+              <OCR_RVCT10>
+                <Type>0</Type>
+                <StartAddress>0x20040000</StartAddress>
+                <Size>0x80000</Size>
+              </OCR_RVCT10>
             </OnChipMemories>
-          </ArmMisc>
-          <Carm>
-            <arpcs>0</arpcs>
-            <stkchk>0</stkchk>
-            <reentr>0</reentr>
-            <interw>0</interw>
-            <bigend>0</bigend>
-            <Strict>0</Strict>
+            <RvctStartVector></RvctStartVector>
+          </ArmAdsMisc>
+          <Cads>
+            <interw>1</interw>
             <Optim>2</Optim>
-            <wLevel>2</wLevel>
-            <uThumb>1</uThumb>
+            <oTime>0</oTime>
+            <SplitLS>0</SplitLS>
+            <OneElfS>1</OneElfS>
+            <Strict>0</Strict>
+            <EnumInt>0</EnumInt>
+            <PlainCh>0</PlainCh>
+            <Ropi>0</Ropi>
+            <Rwpi>0</Rwpi>
+            <wLevel>3</wLevel>
+            <uThumb>0</uThumb>
+            <uSurpInc>0</uSurpInc>
+            <uC99>0</uC99>
+            <uGnu>0</uGnu>
+            <useXO>0</useXO>
+            <v6Lang>6</v6Lang>
+            <v6LangP>1</v6LangP>
+            <vShortEn>1</vShortEn>
+            <vShortWch>1</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>-mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -std=gnu11 --specs=nano.specs -ffunction-sections -fdata-sections</MiscControls>
-              <Define>TFM_PSA_API DEBUG STM32U585xx USE_HAL_DRIVER MBEDTLS_CONFIG_FILE=\"mbedtls_config_psa.h\"</Define>
+              <MiscControls>-Wno-implicit-function-declaration</MiscControls>
+              <Define>TFM_PSA_API STM32U585xx USE_HAL_DRIVER MBEDTLS_CONFIG_FILE=\"mbedtls_config_psa.h\" LWIP_ERRNO_INCLUDE=\"lwip_errno.h\"</Define>
               <Undefine></Undefine>
               <IncludePath>..\tfm\interface\include;..\..\Application;..\..\Application\config;..\..\Application\include;..\..\Application\boards;..\..\Application\cli;..\..\Application\app\mqtt;..\..\Application\net\lwip_port\include;..\..\Application\kvstore;..\..\Drivers\BSP\B-U585I-IOT02A;..\..\Drivers\CMSIS\Core\Include;..\..\Drivers\CMSIS\Device\ST\STM32U5xx\Include;..\..\Drivers\CommonIO\include;..\..\Drivers\CommonIO\gpio;..\..\Drivers\STM32U5xx_HAL\Inc;..\..\Middleware\FreeRTOS\backoffAlgorithm\source\include;..\..\Middleware\FreeRTOS\coreJSON\source\include;..\..\Middleware\FreeRTOS\coreMQTT\source\include;..\..\Middleware\FreeRTOS\coreMQTT\source\interface;..\..\Middleware\FreeRTOS\coreMQTT-Agent\source\include;..\..\Middleware\FreeRTOS\kernel\include;..\..\Middleware\FreeRTOS\kernel\portable\GCC\ARM_CM33_NTZ\non_secure;..\..\Middleware\AWS\IoTDeviceDefender\source\include;..\..\Middleware\AWS\IoTDeviceShadow\source\include;..\..\Middleware\AWS\OTA\source\include;..\..\Middleware\AWS\OTA\source\portable\os;..\..\Middleware\lwip\src\include;..\..\Middleware\tinycbor\src;..\..\Middleware\ARM\mbedtls\include;..\..\Middleware\ARM\mbedtls\library;..\..\Middleware\ARM\ota-pal-psa</IncludePath>
             </VariousControls>
-          </Carm>
-          <Aarm>
-            <bBE>0</bBE>
-            <interw>0</interw>
+          </Cads>
+          <Aads>
+            <interw>1</interw>
+            <Ropi>0</Ropi>
+            <Rwpi>0</Rwpi>
+            <thumb>0</thumb>
+            <SplitLS>0</SplitLS>
+            <SwStkChk>0</SwStkChk>
+            <NoWarn>0</NoWarn>
+            <uSurpInc>0</uSurpInc>
+            <useXO>0</useXO>
+            <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
-          </Aarm>
-          <LDarm>
-            <umfTarg>1</umfTarg>
-            <enaGarb>0</enaGarb>
-            <noStart>0</noStart>
+          </Aads>
+          <LDads>
+            <umfTarg>0</umfTarg>
+            <Ropi>0</Ropi>
+            <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
-            <uMathLib>0</uMathLib>
+            <RepFail>1</RepFail>
+            <useFile>0</useFile>
             <TextAddressRange></TextAddressRange>
             <DataAddressRange></DataAddressRange>
-            <BSSAddressRange></BSSAddressRange>
+            <pXoBase></pXoBase>
+            <ScatterFile>.\stm32u5xx_ns.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
-            <IncludeDir></IncludeDir>
-            <Misc>-mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard --specs=nano.specs -static -Wl,--gc-sections -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group</Misc>
-            <ScatterFile>.\stm32u5xx_ns.ld</ScatterFile>
-          </LDarm>
-        </TargetArm>
+            <IncludeLibsPath></IncludeLibsPath>
+            <Misc></Misc>
+            <LinkerInputFile></LinkerInputFile>
+            <DisabledWarnings></DisabledWarnings>
+          </LDads>
+        </TargetArmAds>
       </TargetOption>
       <Groups>
         <Group>
@@ -574,9 +680,19 @@
               <FilePath>..\..\Application\sys\mbedtls_freertos_port.c</FilePath>
             </File>
             <File>
-              <FileName>newlibc_stubs.c</FileName>
+              <FileName>clib_arm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\Application\sys\newlibc_stubs.c</FilePath>
+              <FilePath>..\..\Application\sys\clib_arm.c</FilePath>
+            </File>
+            <File>
+              <FileName>clib_stubs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Application\sys\clib_stubs.c</FilePath>
+            </File>
+            <File>
+              <FileName>retarget_io.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Application\sys\retarget_io.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -597,11 +713,6 @@
               <FileName>b_u585i_iot02a_env_sensors.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\BSP\B-U585I-IOT02A\b_u585i_iot02a_env_sensors.c</FilePath>
-            </File>
-            <File>
-              <FileName>b_u585i_iot02a_light_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\BSP\B-U585I-IOT02A\b_u585i_iot02a_light_sensor.c</FilePath>
             </File>
             <File>
               <FileName>b_u585i_iot02a_motion_sensors.c</FileName>
@@ -727,6 +838,11 @@
               <FileName>stm32u5xx_hal_iwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\STM32U5xx_HAL\Src\stm32u5xx_hal_iwdg.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32u5xx_hal_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\STM32U5xx_HAL\Src\stm32u5xx_hal_pwr.c</FilePath>
             </File>
             <File>
               <FileName>stm32u5xx_hal_pwr_ex.c</FileName>
@@ -947,6 +1063,26 @@
               <FileName>ota_os_freertos.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Middleware\AWS\OTA\source\portable\os\ota_os_freertos.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lib:libc</GroupName>
+          <Files>
+            <File>
+              <FileName>strnlen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Middleware\libc\strnlen.c</FilePath>
+            </File>
+            <File>
+              <FileName>strnstr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Middleware\libc\strnstr.c</FilePath>
+            </File>
+            <File>
+              <FileName>stpncpy.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Middleware\libc\stpncpy.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1222,6 +1358,57 @@
               <FileName>slipif.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Middleware\lwip\src\netif\slipif.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
             <File>
               <FileName>zepif.c</FileName>
@@ -1282,6 +1469,57 @@
               <FileName>cbortojson.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Middleware\tinycbor\src\cbortojson.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
             <File>
               <FileName>cborvalidation.c</FileName>

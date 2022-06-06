@@ -371,7 +371,7 @@ static int mbedtls_ssl_send( void * pvCtx,
             }
             else
             {
-                lError = *__errno();
+                lError = errno;
 
                 if( lError != EWOULDBLOCK )
                 {
@@ -430,10 +430,10 @@ static int mbedtls_ssl_recv( void * pvCtx,
 
     if( lError < 0 )
     {
-        lError = *__errno();
+        lError = errno;
 
         /* force use of newlibc errno */
-        switch( *__errno() )
+        switch( errno )
         {
 #if EAGAIN != EWOULDBLOCK
             case EAGAIN:

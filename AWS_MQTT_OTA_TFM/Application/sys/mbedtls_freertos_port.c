@@ -25,7 +25,7 @@
  * @brief Implements mbed TLS platform functions for FreeRTOS.
  */
 
-#include <malloc.h>
+#include <stdlib.h>
 #include <string.h>
 
 /* FreeRTOS includes. */
@@ -43,6 +43,8 @@
 #include "mbedtls_freertos_port.h"
 
 /*-----------------------------------------------------------*/
+
+#if defined( MBEDTLS_PLATFORM_MEMORY )
 
 /**
  * @brief Allocates memory for an array of members.
@@ -76,7 +78,11 @@ void * mbedtls_platform_calloc( size_t nmemb,
     return pBuffer;
 }
 
+#endif
+
 /*-----------------------------------------------------------*/
+
+#if defined( MBEDTLS_PLATFORM_MEMORY )
 
 /**
  * @brief Frees the space previously allocated by calloc.
@@ -93,6 +99,8 @@ void mbedtls_platform_free( void * ptr )
         vPortFree( ptr );
     }
 }
+
+#endif
 
 /*-----------------------------------------------------------*/
 

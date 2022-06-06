@@ -88,7 +88,7 @@ extern uint32_t SystemCoreClock;
 #define configGENERATE_RUN_TIME_STATS              1
 
 /* For lwip errno support */
-#define configUSE_NEWLIB_REENTRANT                 1
+#define configUSE_NEWLIB_REENTRANT                 0
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                      0
