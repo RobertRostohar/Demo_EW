@@ -215,7 +215,8 @@ static OtaPalStatus_t CalculatePSAImageID( uint8_t slot,
         return OTA_PAL_COMBINE_ERR( OtaPalRxFileCreateFailed, 0 );
     }
 
-    *pxImageID = FWU_CALCULATE_IMAGE_ID(slot, ulImageType, ( uint16_t  ) pFileContext );
+//  *pxImageID = FWU_CALCULATE_IMAGE_ID(slot, ulImageType, ( uint16_t  ) pFileContext );
+    *pxImageID = FWU_CALCULATE_IMAGE_ID(slot, ulImageType, 0 );
 
     return OTA_PAL_COMBINE_ERR( OtaPalSuccess, 0 );
 }
