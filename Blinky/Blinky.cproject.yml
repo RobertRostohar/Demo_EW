@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.3/tools/projmgr/schemas/cproject.schema.json
+
+project:
+  groups:
+    - group: Documentation
+      files: 
+        - file: ./README.md
+    - group: Application
+      files:
+        - file: ./Blinky.c
+
+  layers:
+    - layer: ./Board/AVH_MPS3_Corstone-300/Board.clayer.yml
+      for-type: 
+        - +AVH_MPS3_Corstone-300
+    - layer: ./Board/B-U585I-IOT02A/Board.clayer.yml
+      for-type: 
+        - +B-U585I-IOT02A
+
+    # - layer: ./RTOS/FreeRTOS/RTOS.clayer.yml
+    - layer: ./RTOS/RTX/RTOS.clayer.yml

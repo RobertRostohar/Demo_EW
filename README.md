@@ -118,6 +118,60 @@ Connectivity: Socket interface with VSocket
     `VHT_MPS3_Corstone_SSE-300 -C mps3_board.visualisation.disable-visualisation=1 -C mps3_board.telnetterminal0.start_telnet=0 -C mps3_board.uart0.out_file=- -a <image>`
 
 
+## Blinky project
+
+Subdirectory: `Blinky`
+
+Simple project blinking LEDs. See details in [README.md](Blinky/README.md).
+
+Demo is available for the following targets:
+ - `B-U585I-IOT02A`: runs on B-U585I-IOT02A board
+ - `AVH_MPS3_Corstone-300`: runs on Arm Virtual Hardware Targets (MPS3 platform for Corstone-300)
+
+Required CMSIS packs are listed in the [Blinky.csolution.yml](Blinky/Blinky.csolution.yml) file.
+
+### Target: `B-U585I-IOT02A`
+
+Board: B-U585I-IOT02A  
+
+1. Use `csolution` to create `.cprj` project files  
+`csolution convert -s Blinky.csolution.yml -c Blinky.Debug+B-U585I-IOT02A`  
+`csolution convert -s Blinky.csolution.yml -c Blinky.Release+B-U585I-IOT02A`
+
+2. Build a specific project
+  - use `cbuild`  
+  `cbuild Blinky.Debug+B-U585I-IOT02A.cprj`  
+  `cbuild Blinky.Release+B-U585I-IOT02A.cprj`  
+  - or use MDK and import `Blinky.<build-type>+B-U585I-IOT02A.cprj` and build with MDK  
+
+3. Run the demo
+  - connect the board Debug USB to a PC (provides also power)
+  - program the image to the target
+  - run the program
+
+### Target: `AVH_MPS3_Corstone-300`
+
+Arm Virtual Hardware: MPS3 platform for Corstone-300  
+
+1. Use `csolution` to create `.cprj` project files  
+`csolution convert -s Blinky.csolution.yml -c Demo.Debug+AVH_MPS3_Corstone-300`  
+`csolution convert -s Blinky.csolution.yml -c Demo.Release+AVH_MPS3_Corstone-300`
+
+2. Build a specific project
+  - use `cbuild`  
+  `cbuild Blinky.Debug+AVH_MPS3_Corstone-300.cprj`  
+  `cbuild Blinky.Release+AVH_MPS3_Corstone-300.cprj`  
+  - or use MDK and import `Blinky.<build-type>+AVH_MPS3_Corstone-300.cprj` and build with MDK  
+
+3. Run the demo
+  - within uVision (MDK):
+    - select Models ARMv8-M Debugger (Options for Target - Debug)
+    - click debugger settings and enter:
+      - Command: $KARM\VHT\VHT_MPS3_Corstone_SSE-300.exe
+  - when running standalone (via command line) and VHT executable in path):  
+    `VHT_MPS3_Corstone_SSE-300 -a <image>`
+
+
 ## Edge Impulse example
 
 Subdirectory: `EdgeImpulse`

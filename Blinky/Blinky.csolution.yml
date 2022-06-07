@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.3/tools/projmgr/schemas/csolution.schema.json
+
+solution:
+  packs:
+    - pack: ARM::CMSIS
+    - pack: ARM::CMSIS-Driver
+    - pack: ARM::CMSIS-FreeRTOS
+    - pack: Keil::ARM_Compiler
+
+    - pack: ARM::V2M_MPS3_SSE_300_BSP@1.2.0
+      for-type:
+        - +AVH_MPS3_Corstone-300
+
+    - pack: Keil::STM32U5xx_DFP@2.0.0
+      for-type:
+        - +B-U585I-IOT02A
+    - pack: Keil::B-U585I-IOT02A_BSP@1.0.0
+      for-type:
+        - +B-U585I-IOT02A
+
+  target-types:
+    - type: AVH_MPS3_Corstone-300
+      # device: ARM::SSE-300-MPS3_VHT
+      device: ARM::SSE-300-MPS3
+    - type: B-U585I-IOT02A
+      board: B-U585I-IOT02A
+
+  build-types:
+    - type: Debug
+      compiler: AC6
+      misc:
+        - C*:
+          - -O1
+          - -g
+        - C:
+          - -std=c99
+        - ASM:
+          - -masm=auto
+        - Link:
+          - --entry=Reset_Handler
+    - type: Release
+      compiler: AC6
+      misc:
+        - C*:
+          - -O3
+        - C:
+          - -std=c99
+        - ASM:
+          - -masm=auto
+        - Link:
+          - --entry=Reset_Handler
+
+  projects:
+    - project: ./Blinky.cproject.yml
