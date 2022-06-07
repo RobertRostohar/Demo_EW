@@ -140,15 +140,15 @@ The layout of the microcontroller internal flash memory is described in the tabl
 | 0x00010000 | 1    | 8, 8    | BL2 - NV Counters               |     8 KB    |   0x02000   |                                            |
 | 0x00012000 | 1    | 9, 9    | BL2 - NV Counters initial value |     8 KB    |   0x02000   | **b_u585i_iot02a_tfm_bl2.bin** image       |
 | 0x00014000 | 1    | 10, 21  | BL2 - MCUBoot HDP Code          |    96 KB    |   0x18000   | **b_u585i_iot02a_tfm_bl2.bin** image       |
-| 0x0002C000 | 1    | 22, 25  | BL2 - SPE Shared Code           |    28 KB    |   0x07000   | **b_u585i_iot02a_tfm_bl2.bin** image       |
-| 0x00033000 | 1    | 25, 25  | OTP Write Protect               |     4 KB    |   0x01000   | N/A                                        |
-| 0x00034000 | 1    | 26, 27  | NV counters area                |    16 KB    |   0x04000   | N/A                                        |
-| 0x00038000 | 1    | 28, 29  | Secure Storage Area             |    16 KB    |   0x04000   | N/A                                        |
-| 0x0003C000 | 1    | 30, 31  | Internal Trusted Storage Area   |    16 KB    |   0x04000   | N/A                                        |
-| 0x00040000 | 1    | 32, 63  | Secure image     primary slot   |   256 KB    |   0x40000   | **b_u585i_iot02a_tfm_s_signed.bin** image  |
-| 0x00080000 | 1-2  | 64, 16  | Non-secure image primary slot   |   640 KB    |   0xA0000   | **b_u585i_iot02a_tfm_ns_signed.bin** image |
-| 0x00120000 | 2    | 17, 48  | Secure image     secondary slot |   256 KB    |   0x40000   | **b_u585i_iot02a_tfm_s_ota.bin** image     |
-| 0x00160000 | 2    | 49, 127 | Non-secure image secondary slot |   640 KB    |   0xA0000   | **b_u585i_iot02a_tfm_ns_ota.bin** image    |
+| 0x0002C000 | 1    | 22, 22  | BL2 - SPE Shared Code           |     4 KB    |   0x01000   | **b_u585i_iot02a_tfm_bl2.bin** image       |
+| 0x0002D000 | 1    | 22, 22  | OTP Write Protect               |     4 KB    |   0x01000   | N/A                                        |
+| 0x0002E000 | 1    | 23, 24  | NV counters area                |    16 KB    |   0x04000   | N/A                                        |
+| 0x00032000 | 1    | 25, 26  | Secure Storage Area             |    16 KB    |   0x04000   | N/A                                        |
+| 0x00036000 | 1    | 27, 28  | Internal Trusted Storage Area   |    16 KB    |   0x04000   | N/A                                        |
+| 0x0003A000 | 1    | 29, 60  | Secure image     primary slot   |   256 KB    |   0x40000   | **b_u585i_iot02a_tfm_s_signed.bin** image  |
+| 0x0007A000 | 1-2  | 61, 13  | Non-secure image primary slot   |   640 KB    |   0xA0000   | **b_u585i_iot02a_tfm_ns_signed.bin** image |
+| 0x0011A000 | 2    | 14, 45  | Secure image     secondary slot |   256 KB    |   0x40000   | **b_u585i_iot02a_tfm_s_ota.bin** image     |
+| 0x0015A000 | 2    | 46, 124 | Non-secure image secondary slot |   640 KB    |   0xA0000   | **b_u585i_iot02a_tfm_ns_ota.bin** image    |
 
 For additional information on protection mechanisms and images please check the original example [documentation](https://github.com/FreeRTOS/iot-reference-stm32u5/tree/main/Projects/b_u585i_iot02a_tfm).
 
