@@ -1,5 +1,9 @@
 # Demo_EW
-Demo examples for Embedded World
+Demo examples for Embedded World:
+ - [AWS MQTT Demo](README.md#aws-mqtt-demo)
+ - [AWS MQTT OTA with TF-M Demo](README.md#aws-mqtt-ota-with-tf-m-demo)
+ - [Blinky project](README.md#blinky-project)
+ - [Edge Impulse example](README.md#edge-impulse-example)
 
 
 ## Prerequisites
@@ -116,6 +120,13 @@ Connectivity: Socket interface with VSocket
       - Command: $KARM\VHT\VHT_MPS3_Corstone_SSE-300.exe
   - when running standalone (via command line) and VHT executable in path):  
     `VHT_MPS3_Corstone_SSE-300 -C mps3_board.visualisation.disable-visualisation=1 -C mps3_board.telnetterminal0.start_telnet=0 -C mps3_board.uart0.out_file=- -a <image>`
+
+
+## AWS MQTT OTA with TF-M Demo
+
+Subdirectory: `AWS_MQTT_OTA_TFM`
+
+Demo for secure Over-The-Air firmware update using Amazon AWS. See details in [README.md](AWS_MQTT_OTA_TFM/README.md).
 
 
 ## Blinky project
