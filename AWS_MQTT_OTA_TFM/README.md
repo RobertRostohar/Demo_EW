@@ -89,7 +89,7 @@ For more information on the original example functionality refer to the [FreeRTO
   - Check if **Firmware upgrade** is available, if it is then update the ST-LINK firmware to the latest available
   - Close the **STM32CubeProgrammer**
 
-**WiFi module firmware update**
+**WiFi module firmware update** (required for older board revision C01)
 
   - Download the [EMW3080 update tool](https://www.st.com/content/ccc/resource/technical/software/firmware/group1/48/a2/e8/27/7f/ae/4b/26/x-wifi-emw3080b/files/x-wifi-emw3080b.zip/jcr:content/translations/en.x-wifi-emw3080b.zip) from the STMicroelectronics website
   - Extract downloaded archive
@@ -174,6 +174,7 @@ To test the application follow the steps below:
   - Click on the **Build (F7)** button to build the application
   - After build finishes the application image will be **signed** (using the sign_image.bat script)
   - Click on the **Download (F8)** button to download the application to the flash memory of the microcontroller
+    > Note: if download fails (current flash algorithm is not reliable) then use STM32CubeProgrammer and download **b_u585i_iot02a_tfm_ns_signed.hex** file located in **Projects\\app\\** subfolder
   - Press the **RST** (black) button to reset the board and the microcontroller will start the application execution
 
 **Provision Your Board for the Cloud connection**
