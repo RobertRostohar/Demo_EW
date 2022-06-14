@@ -126,7 +126,7 @@ Connectivity: Socket interface with VSocket
 
 Subdirectory: `AWS_MQTT_OTA_TFM`
 
-Demo for secure Over-The-Air firmware update using Amazon AWS. See details in [README.md](AWS_MQTT_OTA_TFM/README.md).
+Demo for secure Over-The-Air firmware update using Amazon AWS for STM32U5. See details in [README.md](AWS_MQTT_OTA_TFM_STM32U5/README.md).
 
 
 ## Blinky project
