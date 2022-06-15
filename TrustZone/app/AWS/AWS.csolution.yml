@@ -28,7 +28,6 @@ solution:
   target-types:
     - type: B-U585I-IOT02A
       board: B-U585I-IOT02A
-      # device: MIMXRT1052DVL6B
 
   build-types:
     - type: Debug

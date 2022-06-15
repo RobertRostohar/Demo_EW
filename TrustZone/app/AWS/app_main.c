@@ -23,6 +23,7 @@
 #include "iot_logging_task.h"
 #include "aws_demo.h"
 #include "ota_provision.h"
+#include "aws_dev_mode_key_provisioning.h"
 
 
 /* Set logging task as high priority task */
@@ -65,6 +66,7 @@ static void app_main (void *argument) {
 #ifdef CONFIG_OTA_PROVISION
   ota_provision();
 #endif
+  vDevModeKeyProvisioning();
 
   status = network_startup();
 

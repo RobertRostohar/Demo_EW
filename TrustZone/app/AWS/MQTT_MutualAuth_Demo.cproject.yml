@@ -14,10 +14,14 @@ project:
   add-paths:
     - ./config_files
     - ./amazon-freertos/demos/include
+    - ./amazon-freertos/demos/dev_mode_key_provisioning/include
     - ./amazon-freertos/demos/network_manager
     - ./amazon-freertos/demos/common/pkcs11_helpers
     - ./amazon-freertos/libraries/3rdparty/mbedtls_config
     - ./amazon-freertos/libraries/logging/include
+    - ./amazon-freertos/libraries/abstractions/pkcs11/corePKCS11/source/include
+    - ./amazon-freertos/libraries/abstractions/pkcs11/corePKCS11/source/dependency/3rdparty/mbedtls_utils
+    - ./amazon-freertos/libraries/abstractions/pkcs11/psa
     - ./amazon-freertos/libraries/abstractions/platform/include
     - ./amazon-freertos/libraries/abstractions/platform/freertos/include
     - ./amazon-freertos/libraries/abstractions/secure_sockets/include
@@ -49,9 +53,6 @@ project:
     - component: AWS::FreeRTOS:backoffAlgorithm
     - component: AWS::FreeRTOS:coreMQTT
     - component: AWS::FreeRTOS:coreMQTT Agent
-    - component: AWS::FreeRTOS:corePKCS11&Custom
-      defines:
-        - MBEDTLS_CONFIG_FILE="aws_mbedtls_config.h"
 
     - component: AWS::Security:PKCS11&No Implementation
 
@@ -73,21 +74,15 @@ project:
         - file: ./config_files/iot_config.h
         - file: ./config_files/iot_secure_sockets_config.h
         - file: ./config_files/mqtt_demo_mutual_auth_config.h
-    - group: demos_include
-      files:
-        - file: ./amazon-freertos/demos/include/aws_clientcredential.h
-        - file: ./amazon-freertos/demos/include/aws_clientcredential_keys.h
-        - file: ./amazon-freertos/demos/include/aws_demo.h
-        - file: ./amazon-freertos/demos/include/aws_iot_metrics.h
-        - file: ./amazon-freertos/demos/include/iot_config_common.h
-        - file: ./amazon-freertos/demos/include/iot_demo_logging.h
-        - file: ./amazon-freertos/demos/include/iot_demo_runner.h
     - group: demos
+      defines:
+        - MBEDTLS_CONFIG_FILE="aws_mbedtls_config.h"
       files:
         - file: ./amazon-freertos/demos/demo_runner/aws_demo.c
         - file: ./amazon-freertos/demos/demo_runner/iot_demo_runner.c
         - file: ./amazon-freertos/demos/demo_runner/iot_demo_freertos.c
         - file: ./amazon-freertos/demos/coreMQTT/mqtt_demo_mutual_auth.c
+        - file: ./amazon-freertos/demos/dev_mode_key_provisioning/src/aws_dev_mode_key_provisioning.c
         - file: ./amazon-freertos/demos/network_manager/aws_iot_network_manager.c
         - file: ./amazon-freertos/demos/common/pkcs11_helpers/pkcs11_helpers.c
     - group: libraries
@@ -99,6 +94,13 @@ project:
         - file: ./amazon-freertos/libraries/c_sdk/standard/common/iot_static_memory_common.c
         - file: ./amazon-freertos/libraries/c_sdk/standard/common/taskpool/iot_taskpool.c
         - file: ./amazon-freertos/libraries/c_sdk/standard/common/taskpool/iot_taskpool_static_memory.c
+        - file: ./amazon-freertos/libraries/abstractions/pkcs11/corePKCS11/source/core_pkcs11.c
+        - file: ./amazon-freertos/libraries/abstractions/pkcs11/corePKCS11/source/core_pki_utils.c
+        - file: ./amazon-freertos/libraries/abstractions/pkcs11/corePKCS11/source/dependency/3rdparty/mbedtls_utils/mbedtls_error.c
+        - file: ./amazon-freertos/libraries/abstractions/pkcs11/corePKCS11/source/dependency/3rdparty/mbedtls_utils/mbedtls_utils.c
+        - file: ./amazon-freertos/libraries/abstractions/pkcs11/psa/iot_pkcs11_psa.c
+        - file: ./amazon-freertos/libraries/abstractions/pkcs11/psa/iot_pkcs11_psa_input_format.c
+        - file: ./amazon-freertos/libraries/abstractions/pkcs11/psa/iot_pkcs11_psa_object_management.c
         - file: ./amazon-freertos/libraries/abstractions/platform/freertos/iot_threads_freertos.c
         - file: ./amazon-freertos/libraries/abstractions/platform/freertos/iot_clock_freertos.c
         - file: ./amazon-freertos/libraries/abstractions/transport/secure_sockets/transport_secure_sockets.c
@@ -106,9 +108,6 @@ project:
         - file: ./amazon-freertos/libraries/freertos_plus/standard/tls/src/iot_tls.c
         - file: ./amazon-freertos/libraries/logging/iot_logging.c
         - file: ./amazon-freertos/libraries/logging/iot_logging_task_dynamic_buffers.c
-    - group: ports
-      files:
-        - file: ./amazon-freertos/ports/pkcs11/core_pkcs11_pal.c
     - group: tfm
       files:
         - file: ../../tfm/interface/src/tfm_crypto_ipc_api.c
