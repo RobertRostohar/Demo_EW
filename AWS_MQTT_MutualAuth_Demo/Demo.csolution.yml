@@ -30,7 +30,7 @@ solution:
       device: MIMXRT1052DVL6B
     - type: WiFi
       board: B-U585I-IOT02A
-      # device: MIMXRT1052DVL6B
+      device: STM32U585AIIx
     - type: AVH
       device: ARM::SSE-300-MPS3
 
