@@ -61,5 +61,6 @@ solution:
           - --entry=Reset_Handler
 
   projects:
+    - project: ./Provision.cproject.yml
     - project: ./MQTT_MutualAuth_Demo.cproject.yml
     - project: ./OTA_MQTT_Update_Demo.cproject.yml

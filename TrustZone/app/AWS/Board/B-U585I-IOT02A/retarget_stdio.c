@@ -66,7 +66,7 @@ int stdout_putchar (int ch) {
   \return     The next character from the input, or -1 on read error.
 */
 int stdin_getchar (void) {
-  int ch;
+  int ch = 0;
   HAL_StatusTypeDef hal_stat;
 
   do {
