@@ -1,4 +1,4 @@
-# Trust Zone demos
+# TrustZone demos
 
 - Applications:
   - [AWS Demos](app/AWS/README.md)
