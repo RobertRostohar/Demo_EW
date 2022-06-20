@@ -98,7 +98,7 @@ Generate a Code Signing key:
 1. Bump up the version of the new firmware image to be updated.  
 
    Firmware version (Major, Minor and Build) is defined in the OTA Demo configuration file **ota_demo_config.h**.  
-   Increase the version of the updated firmware (ex: 0.9.3, default version is 0.9.2).
+   Increase the version of the updated firmware (ex: 0.9.3, default version is 0.9.2) and build it.
 
 2. Sign the image using the **sign_image.bat** script and provide the increased **version** and also increment the **security counter** (initial value is 1):  
 
