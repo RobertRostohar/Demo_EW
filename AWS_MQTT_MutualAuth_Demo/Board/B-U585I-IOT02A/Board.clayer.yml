@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.4/tools/projmgr/schemas/clayer.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/1.0.0/tools/projmgr/schemas/clayer.schema.json
 
 layer:
   # type: Board
@@ -29,10 +29,16 @@ layer:
   processor:
     trustzone: off
 
-  add-paths:
+  RTE-paths:
+    - Device: RTE/Device/STM32U585AIIx
+    - Board Support: RTE/Board_Support/STM32U585AIIx
+    - CMSIS Driver: RTE/CMSIS_Driver/STM32U585AIIx
+    - Compiler: RTE/Compiler
+
+  add-path:
     - .
 
-  defines:
+  define:
     - MX_WIFI_SPI_DMA=0   # Do not use DMA if TZEN=1
 
   components:

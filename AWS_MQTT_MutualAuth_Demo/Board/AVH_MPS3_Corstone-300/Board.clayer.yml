@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.4/tools/projmgr/schemas/clayer.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/1.0.0/tools/projmgr/schemas/clayer.schema.json
 
 layer:
   # type: Board
@@ -24,7 +24,11 @@ layer:
   processor:
     trustzone: secure
 
-  add-paths:
+  RTE-paths:
+    - Device: RTE/Device/SSE-300-MPS3
+    - Compiler: RTE/Compiler
+
+  add-path:
     - .
 
   misc:
@@ -55,4 +59,3 @@ layer:
         - file: ./main.c
         - file: ./retarget_stdio.c
         - file: ./Driver/vio_V2M-MPS3-SSE-300.c
-        - file: ../../RTE/Device/SSE-300-MPS3/fvp_sse300_mps3_s.sct
